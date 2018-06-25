@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project: Quiz App</title>
+	<meta name="application-name" content="MKS-Quiz-App">
+	<meta name="author" content="Marshall Spainhour">
+	<meta name="description" content="Thinkful — Web Dev Fundamentals — Quiz App">
+
+	<!--STYLESHEETS-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+	<link rel="stylesheet" href="index.css">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i" rel="stylesheet">
+</head>
+
+<body>
+	<main role="main">
+
+
+		<div class="card shadow">
+
+			<div id="view-landing-screen" class="view">
+				<h1 aria-label="Header Message" class="header-text small-heading">Greetings.</h1>
+				<p aria-label="Introduction" class="large-text">Ensure you are seated comfortably. This non-invasive science fact questionnaire analyzes your ability to recall information
+					within normative parameters.
+					<br>
+					<br>
+					<em>The year is ${ERR:(0x85E)}.</em>
+				</p>
+				<p aria-label="Fine Print" class="fine-print">By beginning the Normativity in Recollection Response Examination™, you consent to the terms and conditions of use furnished
+					by ThermoSys Pan-Africa®, in perpetuity, regarding the user data generated herein.</p>
+				<button type="button" id="js-begin-button">Begin Examination →</button>
+			</div>
+
+			<div id="view-prompt" class="view hidden">
+				<h1 aria-label="Header Message" id="js-prompt-header-text" class="header-text small-heading">$js-prompt-proposed-header-text</h1>
+				<p aria-labelledby="js-prompt-header-text" id="js-prompt" class="large-text">
+					id=js-proposed-prompt
+				</p>
+				<form id="responses-form" role="form" class="shadow">
+					<fieldset>
+						<legend>Available Responses</legend>
+						<!--Positioned out of view via CSS-->
+						<div id="js-response-list-wrapper">
+							<!--Responses to inserted here via JavaScript-->
+						</div>
+					</fieldset>
+				</form>
+				<button type="button" form="responses-form" id="js-submit-response-button">Select Response Above ↑</button>
+			</div>
+
+			<div id="view-response-feedback" class="view hidden">
+				<h1 aria-label="Header Message" id="js-response-feedback-header-text" class="header-text small-heading">$js-response-feedback-header-text</h1>
+				<div>
+					<h2 id="response-feedback-prompt-heading" class="small-heading">Prompt</h2>
+					<p id="js-response-feedback-prompt" class="large-text">
+						id=js-response-feedback-prompt
+					</p>
+				</div>
+				<div>
+					<h2 id="js-response-feedback-correct-response-heading" class="small-heading">
+						id=js-response-feedback-correct-response-heading
+					</h2>
+					<p id="js-response-feedback-correct-response" class="response-wrapper response shadow" aria-labelledby="js-response-feedback-correct-response-heading">
+						id=js-response-feedback-correct-response
+					</p>
+				</div>
+				<div>
+					<h2 id="response-feedback-score-heading" class="small-heading">Current Score</h2>
+					<p id="js-response-feedback-score" class="large-text" aria-labelledby="response-feedback-score-heading">
+						id=js=response-feedback-score
+					</p>
+				</div>
+				<button type="button" id="js-next-prompt-button">Next Question →</button>
+			</div>
+
+			<div id="view-final-results" class="view hidden">
+				<h1 aria-label="Header Message" id="js-final-results-header-text" class="header-text small-heading">Thank you for participating.</h1>
+				<p aria-label="Final Result Message" class="large-text">ThermoSys Pan-Africa® appreciates your willingness to temporarily waive your civil rights to participate in the Normativity
+					in Recollection Response Examination™. Your efforts have gone towards making our services better for future participants.</p>
+				<div>
+					<h2 id="final-results-score-heading" class="small-heading">Final Score</h2>
+					<p id="js-final-results-score" class="large-text" aria-labelledby="final-results-score-heading">
+						id=js-final-results-score
+					</p>
+				</div>
+				<button type="button" id="js-start-over-button">Take Examination Again</button>
+			</div>
+
+		</div>
+
+
+	</main>
+
+	<!--SCRIPTS-->
+	<script src="https://wzrd.repl.it/bundle/jquery"></script>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+
+</body>
+
+</html>
